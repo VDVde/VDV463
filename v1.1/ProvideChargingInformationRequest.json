@@ -453,9 +453,6 @@
 				"chargingPointFaultInfo": {
 					"$ref": "#/definitions/ChargingPointFaultInfo"
 				},
-				"vehicleInfo": {
-					"$ref": "#/definitions/VehicleInfo"
-				},
 				"chargingProcessInfo": {
 					"$ref": "#/definitions/ChargingProcessInfo"
 				},
@@ -522,6 +519,14 @@
 					"minItems": 1,
 					"items": {
 						"$ref": "#/definitions/ChargingStationInfo"
+					},
+					"additionalProperties": false
+				},
+				"vehicleInfoList": {
+					"type": "array",
+					"minItems": 0,
+					"items": {
+						"$ref": "#/definitions/VehicleInfo"
 					},
 					"additionalProperties": false
 				}

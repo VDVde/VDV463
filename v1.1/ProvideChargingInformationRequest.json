@@ -427,6 +427,9 @@
 				"chargingPointId": {
 					"$ref": "#/definitions/UniqueIdentifier"
 				},
+				"vehicleId": {
+					"$ref": "#/definitions/VehicleIdentifier"
+				},
 				"chargingPointStatus": {
 					"$ref": "#/definitions/ChargingPointStatus"
 				},

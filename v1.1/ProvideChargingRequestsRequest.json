@@ -26,9 +26,8 @@
 			"additionalProperties": false
 		},
 		"UniqueIdentifier": {
-			"description": "This type represents an unique identifier according to RFC3986.",
+			"description": "This type represents an unique identifier.",
 			"type": "string",
-			"format": "uri",
 			"additionalProperties": false
 		},
 		"ChargingInstruction": {

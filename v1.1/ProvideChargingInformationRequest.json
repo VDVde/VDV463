@@ -150,7 +150,7 @@
 					"type": "integer",
 					"additionalProperties": false
 				},
-				"criticalCondition": {
+				"status": {
 					"type": "integer",
 					"additionalProperties": false
 				}
@@ -161,7 +161,7 @@
 			"description": "This type represents information regarding a hydrogen tank.",
 			"type": "object",
 			"properties": {
-				"criticalCondition": {
+				"status": {
 					"type": "integer",
 					"additionalProperties": false
 				}

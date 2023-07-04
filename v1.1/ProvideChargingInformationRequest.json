@@ -151,7 +151,7 @@
 					"additionalProperties": false
 				},
 				"criticalCondition": {
-					"type": "boolean",
+					"type": "integer",
 					"additionalProperties": false
 				}
 			},
@@ -162,7 +162,7 @@
 			"type": "object",
 			"properties": {
 				"criticalCondition": {
-					"type": "boolean",
+					"type": "integer",
 					"additionalProperties": false
 				}
 			},

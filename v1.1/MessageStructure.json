@@ -23,10 +23,9 @@
          "description": "This type represents the source of the data of the message."
       },
       {
-         "description": "This type represents an unique identifier for the presystemId according to RFC3986.",
+         "description": "This type represents an unique identifier for the presystemId.",
          "type": "string",
-         "additionalProperties": false,
-         "format": "uri"
+         "additionalProperties": false
       },
       {
          "type": "string",

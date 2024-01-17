@@ -363,7 +363,7 @@
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix minimum state of charge.",
 			"type": "object",
 			"properties": {
 				"requestedMinSoc": {
@@ -383,7 +383,7 @@
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataFinalSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix maximum state of charge.",
 			"type": "object",
 			"properties": {
 				"predictedFinalSoc": {

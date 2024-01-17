@@ -13,6 +13,13 @@
 				"$ref": "#/definitions/ChargingRequest"
 			},
 			"additionalProperties": false
+		},
+		"maintenanceRequestList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/MaintenanceRequest"
+			},
+			"additionalProperties": false
 		}
 	},
 	"required": [
@@ -180,6 +187,55 @@
 				"chargingRequestData"
 			],
 			"additionalProperties": false
+		},
+		"MaintenanceRequest": {
+			"description": "This type represents a maintenance request used for planned maintenance at charging points.",
+			"type": "object",
+			"properties": {
+				"chargingPointId": {
+					"$ref": "#/definitions/UniqueIdentifier"
+				},
+				"startTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				},
+				"endTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				},
+				"chargingMode": {
+					"$ref": "#/definitions/MaintenanceChargingMode"
+				},
+				"availability": {
+					"$ref": "#/definitions/MaintenanceChargingAvailability"
+				}
+			},
+			"required": [
+				"chargingPointId",
+				"startTime",
+				"chargingMode",
+				"availability"
+			],
+			"additionalProperties": false
+		},
+		"MaintenanceChargingMode": {
+			"type": "string",
+			"additionalProperties": false,
+			"enum": [
+				"ZeroPower",
+				"MinimumPower"
+			]
+		},
+		"MaintenanceChargingAvailability": {
+			"type": "string",
+			"additionalProperties": false,
+			"enum": [
+				"Available",
+				"Unavailable"
+			]
 		}
+
 	}
 }

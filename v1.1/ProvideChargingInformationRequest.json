@@ -357,9 +357,6 @@
 					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
 				}
 			},
-			"required": [
-				"chargingPredictionDataMinSoc"
-			],
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {

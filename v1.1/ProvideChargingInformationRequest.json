@@ -355,6 +355,9 @@
 				},
 				"chargingPredictionDataFinalSoc": {
 					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
+				},
+				"chargingPredictionDataDepartureTime": {
+					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
 				}
 			},
 			"additionalProperties": false
@@ -398,6 +401,23 @@
 				"predictedTime"
 			],
 			"additionalProperties": false
+		},
+		"ChargingPredictionDataDepartureTime": {
+			"description": "This type represents information regarding a charging process state of charge forecast given a fix departure time.",
+			"type": "object",
+			"properties": {
+				"predictedDepartureTimeSoc": {
+					"type": "number"
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"predictedDepartureTimeSoc",
+				"predictedTime"
+			]
 		},
 		"ChargingPointInfo": {
 			"type": "object",

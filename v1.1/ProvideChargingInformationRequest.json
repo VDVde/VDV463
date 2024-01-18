@@ -139,6 +139,21 @@
 				"temperature": {
 					"type": "integer",
 					"additionalProperties": false
+				},
+				"status": {
+					"type": "integer",
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"HydrogenTankInfo": {
+			"description": "This type represents information regarding a hydrogen tank.",
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "integer",
+					"additionalProperties": false
 				}
 			},
 			"additionalProperties": false
@@ -248,6 +263,9 @@
 				},
 				"tractionBatteryInfo": {
 					"$ref": "#/definitions/TractionBatteryInfo"
+				},
+				"hydrogenTankInfo": {
+					"$ref": "#/definitions/HydrogenTankInfo"
 				},
 				"vehicleStatusInfo": {
 					"$ref": "#/definitions/VehicleStatusInfo"

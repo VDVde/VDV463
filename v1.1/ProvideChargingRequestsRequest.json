@@ -192,6 +192,9 @@
 			"description": "This type represents a maintenance request used for planned maintenance at charging points.",
 			"type": "object",
 			"properties": {
+				"maintenanceRequestId": {
+					"$ref": "#/definitions/UniqueIdentifier"
+				},
 				"chargingPointId": {
 					"$ref": "#/definitions/UniqueIdentifier"
 				},
@@ -213,6 +216,7 @@
 				}
 			},
 			"required": [
+				"maintenanceRequestId",
 				"chargingPointId",
 				"startTime",
 				"chargingMode",

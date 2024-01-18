@@ -130,14 +130,17 @@
 			"properties": {
 				"stateOfHealth": {
 					"type": "number",
+					"description": "Current state-of-health of traction battery in percent [%] regarding specified maximum capacity",
 					"additionalProperties": false
 				},
 				"stateOfCharge": {
 					"type": "number",
+					"description": "Current state-of-charge of traction battery in percent [%] regarding current maximum capacity",
 					"additionalProperties": false
 				},
 				"temperature": {
 					"type": "integer",
+					"description": "Current temperature of traction battery in [°C]",
 					"additionalProperties": false
 				},
 				"status": {
@@ -184,6 +187,7 @@
 				},
 				"batteryChargingVoltage": {
 					"type": "number",
+					"description": "Current charging voltage of 12/24V battery in [V]",
 					"additionalProperties": false
 				}
 			},
@@ -233,18 +237,22 @@
 			"properties": {
 				"hvBatteryPreconditioningTime": {
 					"type": "integer",
+					"description": "Required time in minutes for preconditioning high voltage battery.",
 					"additionalProperties": false
 				},
 				"hvBatteryChargingEnergy": {
 					"type": "integer",
+					"description": "Required energy in [kWh] for charging high voltage battery (including energy for preconditioning purposes).",
 					"additionalProperties": false
 				},
 				"vehiclePreconditioningTime": {
 					"type": "integer",
+					"description": "Required time in minutes for preconditioning of vehicle.",
 					"additionalProperties": false
 				},
 				"vehiclePreconditioningEnergy": {
 					"type": "integer",
+					"description": "Required energy in [kWh] for preconditioning of vehicle.",
 					"additionalProperties": false
 				}
 			},
@@ -294,18 +302,22 @@
 			"properties": {
 				"chargingCurrent": {
 					"type": "number",
+					"description": "Current charging current in [A]",
 					"additionalProperties": false
 				},
 				"chargingVoltage": {
 					"type": "number",
+					"description": "Current charging voltage in [V] (outgoing in direction of vehicle)",
 					"additionalProperties": false
 				},
 				"chargingPower": {
 					"type": "number",
+					"description": "Current charging power in [kW]",
 					"additionalProperties": false
 				},
 				"reactivePower": {
 					"type": "number",
+					"description": "Current reactive power in [kvar]",
 					"additionalProperties": false
 				}
 			},
@@ -343,6 +355,7 @@
 				},
 				"deliveredEnergy": {
 					"type": "number",
+					"description": "Delivered energy during charging process in [Wh] (for statistical purposes only)",
 					"additionalProperties": false
 				}
 			},
@@ -377,11 +390,13 @@
 			"properties": {
 				"requestedMinSoc": {
 					"type": "number",
+					"description": "Requested state-of-charge in [%] that has to be reached at requested drive off time.",
 					"additionalProperties": false
 				},
 				"predictedTime": {
 					"type": "string",
 					"format": "date-time",
+					"description": "Predicted time to reach requested state-of-charge.",
 					"additionalProperties": false
 				}
 			},
@@ -397,11 +412,13 @@
 			"properties": {
 				"predictedFinalSoc": {
 					"type": "number",
+					"description": "Predicted state-of-charge in [%] that will be reached at predicted time.",
 					"additionalProperties": false
 				},
 				"predictedTime": {
 					"type": "string",
 					"format": "date-time",
+					"description": "Time when predicted state-of-charge will be reached.",
 					"additionalProperties": false
 				}
 			},
@@ -422,22 +439,27 @@
 				},
 				"insideTemperature": {
 					"type": "number",
+					"description": "Temperature inside charging equipment in [°C]",
 					"additionalProperties": false
 				},
 				"outsideTemperature": {
 					"type": "number",
+					"description": "Temperature outside charging equipment in [°C]",
 					"additionalProperties": false
 				},
 				"connectorTemperature": {
 					"type": "number",
+					"description": "Temperature of connector of charging equipment in [°C]",
 					"additionalProperties": false
 				},
 				"presentPowerLimit": {
 					"type": "number",
+					"description": "Optional power limit in [kWh] currently set by charging management system.",
 					"additionalProperties": false
 				},
 				"energyMeterReading": {
 					"type": "number",
+					"description": "Energy meter reading in [Wh]",
 					"additionalProperties": false
 				},
 				"chargingPointFaultInfo": {
@@ -541,6 +563,7 @@
 				},
 				"totalPower": {
 					"type": "number",
+					"description": "Current power going into charging station in [kW]",
 					"additionalProperties": false
 				}
 			},

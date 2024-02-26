@@ -364,15 +364,15 @@
 				},
 				"chargingPredictionDataFinalSoc": {
 					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
+				},
+				"chargingPredictionDataDepartureTime": {
+					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
 				}
 			},
-			"required": [
-				"chargingPredictionDataMinSoc"
-			],
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix minimum state of charge.",
 			"type": "object",
 			"properties": {
 				"requestedMinSoc": {
@@ -392,7 +392,7 @@
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataFinalSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix maximum state of charge.",
 			"type": "object",
 			"properties": {
 				"predictedFinalSoc": {
@@ -410,6 +410,25 @@
 				"predictedTime"
 			],
 			"additionalProperties": false
+		},
+		"ChargingPredictionDataDepartureTime": {
+			"description": "This type represents information regarding a charging process state of charge forecast given a fix departure time.",
+			"type": "object",
+			"properties": {
+				"predictedDepartureTimeSoc": {
+					"type": "number",
+					"additionalProperties": false
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"predictedDepartureTimeSoc",
+				"predictedTime"
+			]
 		},
 		"ChargingPointInfo": {
 			"type": "object",

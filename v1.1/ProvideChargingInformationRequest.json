@@ -76,15 +76,6 @@
 				"Faulted"
 			]
 		},
-		"ChargingStationStatus": {
-			"type": "string",
-			"additionalProperties": false,
-			"enum": [
-				"Available",
-				"Unavailable",
-				"Faulted"
-			]
-		},
 		"ChargingPointFaultInfo": {
 			"description": "This type represents information regarding a fault at the charging point.",
 			"type": "object",
@@ -145,6 +136,21 @@
 					"additionalProperties": false
 				},
 				"temperature": {
+					"type": "integer",
+					"additionalProperties": false
+				},
+				"status": {
+					"type": "integer",
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"HydrogenTankInfo": {
+			"description": "This type represents information regarding a hydrogen tank.",
+			"type": "object",
+			"properties": {
+				"status": {
 					"type": "integer",
 					"additionalProperties": false
 				}
@@ -257,6 +263,9 @@
 				"tractionBatteryInfo": {
 					"$ref": "#/definitions/TractionBatteryInfo"
 				},
+				"hydrogenTankInfo": {
+					"$ref": "#/definitions/HydrogenTankInfo"
+				},
 				"vehicleStatusInfo": {
 					"$ref": "#/definitions/VehicleStatusInfo"
 				},
@@ -354,15 +363,15 @@
 				},
 				"chargingPredictionDataFinalSoc": {
 					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
+				},
+				"chargingPredictionDataDepartureTime": {
+					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
 				}
 			},
-			"required": [
-				"chargingPredictionDataMinSoc"
-			],
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix minimum state of charge.",
 			"type": "object",
 			"properties": {
 				"requestedMinSoc": {
@@ -382,7 +391,7 @@
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataFinalSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix maximum state of charge.",
 			"type": "object",
 			"properties": {
 				"predictedFinalSoc": {
@@ -400,6 +409,25 @@
 				"predictedTime"
 			],
 			"additionalProperties": false
+		},
+		"ChargingPredictionDataDepartureTime": {
+			"description": "This type represents information regarding a charging process state of charge forecast given a fix departure time.",
+			"type": "object",
+			"properties": {
+				"predictedDepartureTimeSoc": {
+					"type": "number",
+					"additionalProperties": false
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"predictedDepartureTimeSoc",
+				"predictedTime"
+			]
 		},
 		"ChargingPointInfo": {
 			"type": "object",
@@ -422,7 +450,7 @@
 					"type": "number",
 					"additionalProperties": false
 				},
-				"presentPower": {
+				"presentPowerLimit": {
 					"type": "number",
 					"additionalProperties": false
 				},
@@ -517,9 +545,6 @@
 				"chargingStationId": {
 					"$ref": "#/definitions/UniqueIdentifier"
 				},
-				"chargingStationStatus": {
-					"$ref": "#/definitions/ChargingStationStatus"
-				},
 				"chargingPointInfoList": {
 					"type": "array",
 					"items": {
@@ -537,7 +562,6 @@
 			},
 			"required": [
 				"chargingStationId",
-				"chargingStationStatus",
 				"chargingPointInfoList"
 			],
 			"additionalProperties": false

@@ -25,6 +25,11 @@
 			"type": "string",
 			"additionalProperties": false
 		},
+		"EvccIdentifier": {
+			"description": "This type represents a mac adress of electric vehicle communication controller associated with ISO 15118.",
+			"type": "string",
+			"additionalProperties": false
+		},
 		"UniqueIdentifier": {
 			"description": "This type represents an unique identifier.",
 			"type": "string",
@@ -256,6 +261,9 @@
 			"properties": {
 				"vehicleId": {
 					"$ref": "#/definitions/VehicleIdentifier"
+				},
+				"evccId": {
+					"$ref": "#/definitions/EvccIdentifier"
 				},
 				"mileage": {
 					"type": "integer",

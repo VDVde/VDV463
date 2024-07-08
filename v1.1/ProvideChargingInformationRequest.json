@@ -25,7 +25,7 @@
 			"additionalProperties": false
 		},
 		"EvccIdentifier": {
-			"description": "This type represents a mac adress of electric vehicle communication controller associated with ISO 15118.",
+			"description": "This type represents a mac address of electric vehicle communication controller associated with ISO 15118.",
 			"type": "string",
 			"additionalProperties": false
 		},
@@ -143,10 +143,14 @@
 			"properties": {
 				"stateOfHealth": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"stateOfCharge": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"temperature": {

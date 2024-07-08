@@ -48,14 +48,20 @@
 				},
 				"expectedSocAtArrival": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"minTargetSoc": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"maxTargetSoc": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"requestedTimeForDeparture": {

@@ -8,7 +8,6 @@
 	"properties": {
 		"depotInfoList": {
 			"type": "array",
-			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/DepotInfo"
 			},
@@ -25,10 +24,14 @@
 			"type": "string",
 			"additionalProperties": false
 		},
-		"UniqueIdentifier": {
-			"description": "This type represents an unique identifier according to RFC3986.",
+		"EvccIdentifier": {
+			"description": "This type represents a mac address of electric vehicle communication controller associated with ISO 15118.",
 			"type": "string",
-			"format": "uri",
+			"additionalProperties": false
+		},
+		"UniqueIdentifier": {
+			"description": "This type represents an unique identifier.",
+			"type": "string",
 			"additionalProperties": false
 		},
 		"ChargingStationFaultInfo": {
@@ -140,10 +143,14 @@
 			"properties": {
 				"stateOfHealth": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"stateOfCharge": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"temperature": {
@@ -252,6 +259,9 @@
 				"vehicleId": {
 					"$ref": "#/definitions/VehicleIdentifier"
 				},
+				"evccId": {
+					"$ref": "#/definitions/EvccIdentifier"
+				},
 				"mileage": {
 					"type": "integer",
 					"additionalProperties": false
@@ -356,15 +366,15 @@
 				},
 				"chargingPredictionDataFinalSoc": {
 					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
+				},
+				"chargingPredictionDataDepartureTime": {
+					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
 				}
 			},
-			"required": [
-				"chargingPredictionDataMinSoc"
-			],
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix minimum state of charge.",
 			"type": "object",
 			"properties": {
 				"requestedMinSoc": {
@@ -384,7 +394,7 @@
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataFinalSoc": {
-			"description": "This type represents information regarding a charging process forecast.",
+			"description": "This type represents information regarding a charging process time forecast given a fix maximum state of charge.",
 			"type": "object",
 			"properties": {
 				"predictedFinalSoc": {
@@ -402,6 +412,25 @@
 				"predictedTime"
 			],
 			"additionalProperties": false
+		},
+		"ChargingPredictionDataDepartureTime": {
+			"description": "This type represents information regarding a charging process state of charge forecast given a fix departure time.",
+			"type": "object",
+			"properties": {
+				"predictedDepartureTimeSoc": {
+					"type": "number",
+					"additionalProperties": false
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"predictedDepartureTimeSoc",
+				"predictedTime"
+			]
 		},
 		"ChargingPointInfo": {
 			"type": "object",
@@ -501,7 +530,6 @@
 				},
 				"chargingStationInfoList": {
 					"type": "array",
-					"minItems": 1,
 					"items": {
 						"$ref": "#/definitions/ChargingStationInfo"
 					},
@@ -525,7 +553,6 @@
 				},
 				"chargingPointInfoList": {
 					"type": "array",
-					"minItems": 1,
 					"items": {
 						"$ref": "#/definitions/ChargingPointInfo"
 					},

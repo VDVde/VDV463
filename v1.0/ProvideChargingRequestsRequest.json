@@ -8,7 +8,6 @@
 	"properties": {
 		"chargingRequestList": {
 			"type": "array",
-			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/ChargingRequest"
 			},
@@ -26,9 +25,8 @@
 			"additionalProperties": false
 		},
 		"UniqueIdentifier": {
-			"description": "This type represents an unique identifier according to RFC3986.",
+			"description": "This type represents an unique identifier.",
 			"type": "string",
-			"format": "uri",
 			"additionalProperties": false
 		},
 		"ChargingInstruction": {
@@ -50,14 +48,20 @@
 				},
 				"expectedSocAtArrival": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"minTargetSoc": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"maxTargetSoc": {
 					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
 					"additionalProperties": false
 				},
 				"requestedTimeForDeparture": {
@@ -95,6 +99,11 @@
 				},
 				"ambientTemperature": {
 					"type": "number",
+					"additionalProperties": false
+				},
+				"requestedStartTime": {
+					"type": "string",
+					"format": "date-time",
 					"additionalProperties": false
 				},
 				"requestedFinishTime": {

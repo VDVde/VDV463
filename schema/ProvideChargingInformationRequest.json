@@ -161,10 +161,10 @@
 					"description": "Condensed health status of the traction battery.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
@@ -178,16 +178,15 @@
 					"description": "Condensed health status of the H2 tank.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
 			"additionalProperties": false
 		},
-
 		"VehicleStatusInfo": {
 			"description": "This type represents status information regarding a vehicle.",
 			"type": "object",
@@ -460,6 +459,32 @@
 			},
 			"required": [
 				"predictedDepartureTimeSoc",
+				"predictedTime"
+			]
+		},
+		"ChargingProgressPredicitionList": {
+			"description": "This type represents a time series for predicting the charging process (internal extrapolation).",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/ChargingProgressPredicitionListEntry"
+			},
+			"additionalProperties": false
+		},
+		"ChargingProgressPredicitionListEntry": {
+			"type": "object",
+			"properties": {
+				"predictedSoc": {
+					"type": "number",
+					"additionalProperties": false
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"predictedSoc",
 				"predictedTime"
 			]
 		},

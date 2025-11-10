@@ -161,10 +161,10 @@
 					"description": "Condensed health status of the traction battery.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
@@ -178,16 +178,15 @@
 					"description": "Condensed health status of the H2 tank.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
 			"additionalProperties": false
 		},
-
 		"VehicleStatusInfo": {
 			"description": "This type represents status information regarding a vehicle.",
 			"type": "object",
@@ -462,6 +461,38 @@
 				"predictedDepartureTimeSoc",
 				"predictedTime"
 			]
+		},
+		"ChargingProgressPredictionList": {
+			"description": "This type represents a time series for predicting the charging process (internal extrapolation).",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/ChargingProgressPredictionListEntry"
+			},
+			"additionalProperties": false
+		},
+		"ChargingProgressPredictionListEntry": {
+			"description": "This type represents a single prediction data point for the charging process forecast.",
+			"type": "object",
+			"properties": {
+				"predictedSoc": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 100,
+					"additionalProperties": false,
+					"description": "Predicted state of charge in percent (0-100)."
+				},
+				"predictedTime": {
+					"type": "string",
+					"format": "date-time",
+					"additionalProperties": false,
+					"description": "Timestamp when the predicted SoC is expected to be reached."
+				}
+			},
+			"required": [
+				"predictedSoc",
+				"predictedTime"
+			],
+			"additionalProperties": false
 		},
 		"ChargingPointInfo": {
 			"type": "object",

@@ -271,7 +271,7 @@
 				},
 				"hvBatteryChargingEnergy": {
 					"type": "integer",
-					"description": "Required energy in [kWh] for charging high voltage battery (including energy for preconditioning purposes).",
+					"description": "Required energy in [Wh] for charging high voltage battery (including energy for preconditioning purposes).",
 					"additionalProperties": false
 				},
 				"vehiclePreconditioningTime": {
@@ -281,7 +281,7 @@
 				},
 				"vehiclePreconditioningEnergy": {
 					"type": "integer",
-					"description": "Required energy in [kWh] for preconditioning of vehicle.",
+					"description": "Required energy in [Wh] for preconditioning of vehicle.",
 					"additionalProperties": false
 				}
 			},

@@ -50,18 +50,21 @@
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
+                    "description": "Expected state-of-charge in [%] on arrival.",
 					"additionalProperties": false
 				},
 				"minTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
+                    "description": "Minimal state-of-charge in [%] in relation of current maximum capacity and state-of-health",
 					"additionalProperties": false
 				},
 				"maxTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
+                    "description": "Maximal state-of-charge in [%] in relation of current maximum capacity and state-of-health",
 					"additionalProperties": false
 				},
 				"requestedTimeForDeparture": {
@@ -99,6 +102,7 @@
 				},
 				"ambientTemperature": {
 					"type": "number",
+                    "description": "Ambient temperature in [°C]",
 					"additionalProperties": false
 				},
 				"requestedStartTime": {
@@ -128,6 +132,7 @@
 				},
 				"hvacAuxiliaryConsumerPower": {
 					"type": "integer",
+                    "description": "Power setpoint for climatic preconditioning in [kW]",
 					"additionalProperties": false
 				},
 				"systemPreconditioningStartTime": {
@@ -137,6 +142,7 @@
 				},
 				"systemAuxiliaryConsumerPower": {
 					"type": "integer",
+                    "description": "Power setpoint for system preconditioning in [kW]",
 					"additionalProperties": false
 				}
 			},

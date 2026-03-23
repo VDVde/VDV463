@@ -29,15 +29,6 @@
 			"type": "string",
 			"additionalProperties": false
 		},
-		"ChargingInstruction": {
-			"type": "string",
-			"additionalProperties": false,
-			"enum": [
-				"Normal",
-				"Changed",
-				"Terminate"
-			]
-		},
 		"ChargingRequestData": {
 			"type": "object",
 			"properties": {
@@ -171,9 +162,6 @@
 				"priority": {
 					"type": "integer",
 					"additionalProperties": false
-				},
-				"chargingInstruction": {
-					"$ref": "#/definitions/ChargingInstruction"
 				},
 				"chargingRequestData": {
 					"$ref": "#/definitions/ChargingRequestData"

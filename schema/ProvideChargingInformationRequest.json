@@ -353,9 +353,6 @@
 					"additionalProperties": false
 				}
 			},
-			"required": [
-				"chargingPower"
-			],
 			"additionalProperties": false
 		},
 		"ChargingProcessInfo": {

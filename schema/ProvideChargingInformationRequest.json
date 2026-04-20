@@ -12,6 +12,13 @@
 				"$ref": "#/definitions/DepotInfo"
 			},
 			"additionalProperties": false
+		},
+		"rejectedChargingRequestInfoList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/RejectedChargingRequestInfo"
+			},
+			"additionalProperties": false
 		}
 	},
 	"required": [
@@ -19,6 +26,29 @@
 	],
 	"additionalProperties": false,
 	"definitions": {
+		"RejectedChargingRequestInfo": {
+			"description": "This type represents information about charging requests rejected by a load management system.",
+			"type": "object",
+			"properties": {
+				"presystemId": {
+					"$ref": "#/definitions/UniqueIdentifier"
+				},
+				"chargingRequestId": {
+					"$ref": "#/definitions/UniqueIdentifier"
+				},
+				"reason": {
+					"description": "This type represents reason why the charging requests was rejected by the load management system.",
+					"type": "string",
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"presystemId",
+				"chargingRequestId",
+				"reason"
+			],
+			"additionalProperties": false
+		},
 		"VehicleIdentifier": {
 			"description": "This type represents an unique vehicle identifier associated with VDV261.",
 			"type": "string",
@@ -154,10 +184,10 @@
 					"description": "Condensed health status of the traction battery.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
@@ -171,16 +201,15 @@
 					"description": "Condensed health status of the H2 tank.",
 					"type": "string",
 					"additionalProperties": false,
-					"enum": [						
-							"OK",
-							"NOK", 
-							"NA"
+					"enum": [
+						"OK",
+						"NOK",
+						"NA"
 					]
 				}
 			},
 			"additionalProperties": false
 		},
-
 		"VehicleStatusInfo": {
 			"description": "This type represents status information regarding a vehicle.",
 			"type": "object",
@@ -388,10 +417,22 @@
 			],
 			"additionalProperties": false
 		},
+		"ChargingPredictionDataStatus": {
+			"description": "This type represents information regarding the status of a charging process forecast.",
+			"type": "string",
+			"additionalProperties": false,
+			"enum": [
+				"Ongoing",
+				"Finished"
+			]
+		},
 		"ChargingPredictionData": {
 			"description": "This type represents information regarding a charging process forecast.",
 			"type": "object",
 			"properties": {
+				"chargingPredictionDataStatus": {
+					"$ref": "#/definitions/ChargingPredictionDataStatus"
+				},
 				"chargingPredictionDataMinSoc": {
 					"$ref": "#/definitions/ChargingPredictionDataMinSoc"
 				},
@@ -402,6 +443,9 @@
 					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
 				}
 			},
+			"required": [
+				"chargingPredictionDataStatus"
+			],
 			"additionalProperties": false
 		},
 		"ChargingPredictionDataMinSoc": {

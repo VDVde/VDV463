@@ -1,0 +1,18 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "$id": "urn:VDV463:2:0:0:ErrorResponse",
+   "comment": "VDV463 2.0.0 FINAL",
+   "title": "ErrorResponse",
+   "description": "This type represents an error message sent by either system as a response to a request by the other system in case of errors.",
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+      "errorMessage": {
+         "type": "string",
+         "additionalProperties": false
+      }
+   },
+   "required": [
+      "errorMessage"
+   ]
+}

@@ -81,15 +81,6 @@
 				"Faulted"
 			]
 		},
-		"ChargingStationStatus": {
-			"type": "string",
-			"additionalProperties": false,
-			"enum": [
-				"Available",
-				"Unavailable",
-				"Faulted"
-			]
-		},
 		"ChargingPointFaultInfo": {
 			"description": "This type represents information regarding a fault at the charging point.",
 			"type": "object",
@@ -507,7 +498,7 @@
 					"type": "number",
 					"additionalProperties": false
 				},
-				"presentPower": {
+				"presentPowerLimit": {
 					"type": "number",
 					"description": "Optional power limit in [kW] currently set by the LMS.",
 					"additionalProperties": false
@@ -604,9 +595,6 @@
 				"chargingStationId": {
 					"$ref": "#/definitions/UniqueIdentifier"
 				},
-				"chargingStationStatus": {
-					"$ref": "#/definitions/ChargingStationStatus"
-				},
 				"chargingPointInfoList": {
 					"type": "array",
 					"items": {
@@ -625,7 +613,6 @@
 			},
 			"required": [
 				"chargingStationId",
-				"chargingStationStatus",
 				"chargingPointInfoList"
 			],
 			"additionalProperties": false

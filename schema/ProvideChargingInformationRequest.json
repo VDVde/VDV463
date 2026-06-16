@@ -193,7 +193,7 @@
 			},
 			"additionalProperties": false
 		},
-		"h2TankInfo": {
+		"H2TankInfo": {
 			"description": "This type represents information regarding a H2 tank.",
 			"type": "object",
 			"properties": {
@@ -325,7 +325,7 @@
 					"$ref": "#/definitions/TractionBatteryInfo"
 				},
 				"h2TankInfo": {
-					"$ref": "#/definitions/h2TankInfo"
+					"$ref": "#/definitions/H2TankInfo"
 				},
 				"vehicleStatusInfo": {
 					"$ref": "#/definitions/VehicleStatusInfo"

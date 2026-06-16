@@ -10,15 +10,13 @@
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/DepotInfo"
-			},
-			"additionalProperties": false
+			}
 		},
 		"rejectedChargingRequestInfoList": {
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/RejectedChargingRequestInfo"
-			},
-			"additionalProperties": false
+			}
 		}
 	},
 	"required": [
@@ -38,8 +36,7 @@
 				},
 				"reason": {
 					"description": "This type represents reason why the charging requests was rejected by the load management system.",
-					"type": "string",
-					"additionalProperties": false
+					"type": "string"
 				}
 			},
 			"required": [
@@ -51,18 +48,15 @@
 		},
 		"VehicleIdentifier": {
 			"description": "This type represents an unique vehicle identifier associated with VDV261.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"EvccIdentifier": {
 			"description": "This type represents a mac address of electric vehicle communication controller associated with ISO 15118.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"UniqueIdentifier": {
 			"description": "This type represents an unique identifier.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"ChargingStationFaultInfo": {
 			"description": "This type represents error information regarding charging stations.",
@@ -72,13 +66,11 @@
 					"$ref": "#/definitions/ChargingStationFaultCode"
 				},
 				"faultText": {
-					"type": "string",
-					"additionalProperties": false
+					"type": "string"
 				},
 				"faultTimeStamp": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -90,7 +82,6 @@
 		"ChargingStationFaultCode": {
 			"description": "This type represents error codes regarding faults at the charging station.",
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"NoFaultKnown",
 				"UsageFailure",
@@ -102,7 +93,6 @@
 		},
 		"ChargingPointStatus": {
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"Available",
 				"Occupied",
@@ -119,13 +109,11 @@
 					"$ref": "#/definitions/ChargingPointFaultCode"
 				},
 				"faultText": {
-					"type": "string",
-					"additionalProperties": false
+					"type": "string"
 				},
 				"faultTimeStamp": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -137,7 +125,6 @@
 		"ChargingPointFaultCode": {
 			"description": "This type represents error codes regarding faults at the charging point.",
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"NoFaultKnown",
 				"UsageFailure",
@@ -147,7 +134,6 @@
 		},
 		"ProcessStatus": {
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"Preparing",
 				"Charging",
@@ -166,24 +152,20 @@
 					"type": "number",
 					"description": "Current state-of-health of traction battery in percent [%] regarding specified maximum capacity",
 					"minimum": 0,
-					"maximum": 100,
-					"additionalProperties": false
+					"maximum": 100
 				},
 				"stateOfCharge": {
 					"type": "number",
 					"description": "Current state-of-charge of traction battery in percent [%] regarding current maximum capacity",
 					"minimum": 0,
-					"maximum": 100,
-					"additionalProperties": false
+					"maximum": 100
 				},
 				"temperature": {
-					"type": "integer",
-					"additionalProperties": false
+					"type": "integer"
 				},
 				"batteryStatus": {
 					"description": "Condensed health status of the traction battery.",
 					"type": "string",
-					"additionalProperties": false,
 					"enum": [
 						"OK",
 						"NOK",
@@ -200,7 +182,6 @@
 				"h2TankStatus": {
 					"description": "Condensed health status of the H2 tank.",
 					"type": "string",
-					"additionalProperties": false,
 					"enum": [
 						"OK",
 						"NOK",
@@ -215,36 +196,29 @@
 			"type": "object",
 			"properties": {
 				"conservationChargingActive": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				},
 				"systemPreconditioningActive": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				},
 				"hvacPreconditioningActive": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				},
 				"balancingActive": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				},
 				"fossilFlameControlActive": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				},
 				"batteryChargingVoltage": {
 					"type": "number",
-					"description": "Current charging voltage of 12/24V battery in [V]",
-					"additionalProperties": false
+					"description": "Current charging voltage of 12/24V battery in [V]"
 				}
 			},
 			"additionalProperties": false
 		},
 		"VehicleChargingStatus": {
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"ReadyToCharge",
 				"Charging",
@@ -260,13 +234,11 @@
 					"$ref": "#/definitions/VehicleFaultCode"
 				},
 				"faultText": {
-					"type": "string",
-					"additionalProperties": false
+					"type": "string"
 				},
 				"faultTimeStamp": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -277,8 +249,7 @@
 		},
 		"VehicleFaultCode": {
 			"description": "This type represents error codes regarding faults at vehicles.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"PreconditioningInfo": {
 			"description": "This type represents information regarding preconditioning according to VDV261.",
@@ -286,23 +257,19 @@
 			"properties": {
 				"hvBatteryPreconditioningTime": {
 					"type": "integer",
-					"description": "Required time in minutes for preconditioning high voltage battery.",
-					"additionalProperties": false
+					"description": "Required time in minutes for preconditioning high voltage battery."
 				},
 				"hvBatteryChargingEnergy": {
 					"type": "integer",
-					"description": "Required energy in [Wh] for charging high voltage battery (including energy for preconditioning purposes).",
-					"additionalProperties": false
+					"description": "Required energy in [Wh] for charging high voltage battery (including energy for preconditioning purposes)."
 				},
 				"vehiclePreconditioningTime": {
 					"type": "integer",
-					"description": "Required time in minutes for preconditioning of vehicle.",
-					"additionalProperties": false
+					"description": "Required time in minutes for preconditioning of vehicle."
 				},
 				"vehiclePreconditioningEnergy": {
 					"type": "integer",
-					"description": "Required energy in [Wh] for preconditioning of vehicle.",
-					"additionalProperties": false
+					"description": "Required energy in [Wh] for preconditioning of vehicle."
 				}
 			},
 			"additionalProperties": false
@@ -318,8 +285,7 @@
 					"$ref": "#/definitions/EvccIdentifier"
 				},
 				"mileage": {
-					"type": "integer",
-					"additionalProperties": false
+					"type": "integer"
 				},
 				"tractionBatteryInfo": {
 					"$ref": "#/definitions/TractionBatteryInfo"
@@ -354,23 +320,19 @@
 			"properties": {
 				"chargingCurrent": {
 					"type": "number",
-					"description": "Current charging current in [A]",
-					"additionalProperties": false
+					"description": "Current charging current in [A]"
 				},
 				"chargingVoltage": {
 					"type": "number",
-					"description": "Current charging voltage in [V] (outgoing in direction of vehicle)",
-					"additionalProperties": false
+					"description": "Current charging voltage in [V] (outgoing in direction of vehicle)"
 				},
 				"chargingPower": {
 					"type": "number",
-					"description": "Current charging power in [kW]",
-					"additionalProperties": false
+					"description": "Current charging power in [kW]"
 				},
 				"reactivePower": {
 					"type": "number",
-					"description": "Current reactive power in [kvar]",
-					"additionalProperties": false
+					"description": "Current reactive power in [kvar]"
 				}
 			},
 			"additionalProperties": false
@@ -393,8 +355,7 @@
 				},
 				"startTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"chargingPredictionData": {
 					"$ref": "#/definitions/ChargingPredictionData"
@@ -404,8 +365,7 @@
 				},
 				"deliveredEnergy": {
 					"type": "number",
-					"description": "Delivered energy during charging process in [Wh] (for statistical purposes only)",
-					"additionalProperties": false
+					"description": "Delivered energy during charging process in [Wh] (for statistical purposes only)"
 				}
 			},
 			"required": [
@@ -420,7 +380,6 @@
 		"ChargingPredictionDataStatus": {
 			"description": "This type represents information regarding the status of a charging process forecast.",
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"Ongoing",
 				"Finished"
@@ -459,14 +418,12 @@
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-					"description": "Requested minimal state-of-charge in [%] that was provided by the presystem to be reached at minimum.",
-					"additionalProperties": false
+					"description": "Requested minimal state-of-charge in [%] that was provided by the presystem to be reached at minimum."
 				},
 				"predictedTime": {
 					"type": "string",
 					"format": "date-time",
-					"description": "Predicted time to reach the minimal state-of-charge.",
-					"additionalProperties": false
+					"description": "Predicted time to reach the minimal state-of-charge."
 				}
 			},
 			"required": [
@@ -483,14 +440,12 @@
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-					"description": "Predicted maximum state-of-charge in [%] that was provided by the presystem to be reached at maximum.",
-					"additionalProperties": false
+					"description": "Predicted maximum state-of-charge in [%] that was provided by the presystem to be reached at maximum."
 				},
 				"predictedTime": {
 					"type": "string",
 					"description": "Predicted time to reach the maximum state-of-charge.",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -507,14 +462,12 @@
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-					"description": "State-of-charge in [%] that was predicted by the LMS at the requestedTimeForDeparture provided by the presystem.",
-					"additionalProperties": false
+					"description": "State-of-charge in [%] that was predicted by the LMS at the requestedTimeForDeparture provided by the presystem."
 				},
 				"requestedTimeForDeparture": {
 					"type": "string",
 					"description": "The requestedTimeForDeparture provided by the presystem.",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -527,8 +480,7 @@
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/ChargingProgressPredictionListEntry"
-			},
-			"additionalProperties": false
+			}
 		},
 		"ChargingProgressPredictionListEntry": {
 			"description": "This type represents a single prediction data point for the charging process forecast.",
@@ -538,13 +490,11 @@
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-					"additionalProperties": false,
 					"description": "Predicted state of charge in percent (0-100)."
 				},
 				"predictedTime": {
 					"type": "string",
 					"format": "date-time",
-					"additionalProperties": false,
 					"description": "Timestamp when the predicted SoC is expected to be reached."
 				}
 			},
@@ -565,27 +515,22 @@
 				},
 				"insideTemperature": {
 					"type": "number",
-					"description": "Temperature inside charging equipment in [°C]",
-					"additionalProperties": false
+					"description": "Temperature inside charging equipment in [°C]"
 				},
 				"outsideTemperature": {
 					"type": "number",
-					"description": "Temperature outside charging equipment in [°C]",
-					"additionalProperties": false
+					"description": "Temperature outside charging equipment in [°C]"
 				},
 				"connectorTemperature": {
-					"type": "number",
-					"additionalProperties": false
+					"type": "number"
 				},
 				"presentPowerLimit": {
 					"type": "number",
-					"description": "Optional power limit in [kW] currently set by the LMS.",
-					"additionalProperties": false
+					"description": "Optional power limit in [kW] currently set by the LMS."
 				},
 				"energyMeterReading": {
 					"type": "number",
-					"description": "Energy meter reading in [Wh]",
-					"additionalProperties": false
+					"description": "Energy meter reading in [Wh]"
 				},
 				"chargingPointFaultInfo": {
 					"$ref": "#/definitions/ChargingPointFaultInfo"
@@ -600,8 +545,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/ScheduledChargingProcess"
-					},
-					"additionalProperties": false
+					}
 				}
 			},
 			"required": [
@@ -628,8 +572,7 @@
 				},
 				"startTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"chargingPredictionData": {
 					"$ref": "#/definitions/ChargingPredictionData"
@@ -651,15 +594,13 @@
 				},
 				"name": {
 					"description": "This type represents name of the depot.",
-					"type": "string",
-					"additionalProperties": false
+					"type": "string"
 				},
 				"chargingStationInfoList": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/ChargingStationInfo"
-					},
-					"additionalProperties": false
+					}
 				}
 			},
 			"required": [
@@ -678,16 +619,14 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/ChargingPointInfo"
-					},
-					"additionalProperties": false
+					}
 				},
 				"chargingStationFaultInfo": {
 					"$ref": "#/definitions/ChargingStationFaultInfo"
 				},
 				"totalPower": {
 					"type": "number",
-					"description": "Actual power in [kW] drawn from the grid",
-					"additionalProperties": false
+					"description": "Actual power in [kW] drawn from the grid"
 				}
 			},
 			"required": [

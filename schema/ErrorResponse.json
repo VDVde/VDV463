@@ -8,8 +8,7 @@
    "additionalProperties": false,
    "properties": {
       "errorMessage": {
-         "type": "string",
-         "additionalProperties": false
+         "type": "string"
       }
    },
    "required": [

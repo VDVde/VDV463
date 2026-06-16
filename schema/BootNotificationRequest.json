@@ -16,7 +16,6 @@
    ],
    "definitions": {
       "PresystemEnumType": {
-         "additionalProperties": false,
          "type": "string",
          "enum": [
             "BMS",

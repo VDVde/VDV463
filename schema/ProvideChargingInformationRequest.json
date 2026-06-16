@@ -223,6 +223,8 @@
 				"ReadyToCharge",
 				"Charging",
 				"ChargingImpossible",
+				"ChargingAndPreconditioning",
+				"Preconditioning",
 				"Unknown"
 			]
 		},

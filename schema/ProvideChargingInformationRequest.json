@@ -433,14 +433,17 @@
 				"chargingPredictionDataStatus": {
 					"$ref": "#/definitions/ChargingPredictionDataStatus"
 				},
-				"chargingPredictionDataMinSoc": {
-					"$ref": "#/definitions/ChargingPredictionDataMinSoc"
+				"chargingPredictionDataMinTargetSoc": {
+					"$ref": "#/definitions/ChargingPredictionDataMinTargetSoc"
 				},
-				"chargingPredictionDataFinalSoc": {
-					"$ref": "#/definitions/ChargingPredictionDataFinalSoc"
+				"chargingPredictionDataMaxTargetSoc": {
+					"$ref": "#/definitions/ChargingPredictionDataMaxTargetSoc"
 				},
 				"chargingPredictionDataDepartureTime": {
 					"$ref": "#/definitions/ChargingPredictionDataDepartureTime"
+				},
+				"chargingProgressPredictionList": {
+					"$ref": "#/definitions/ChargingProgressPredictionList"
 				}
 			},
 			"required": [
@@ -448,11 +451,11 @@
 			],
 			"additionalProperties": false
 		},
-		"ChargingPredictionDataMinSoc": {
+		"ChargingPredictionDataMinTargetSoc": {
 			"description": "This type represents information regarding a charging process time forecast given a fix minimum state of charge.",
 			"type": "object",
 			"properties": {
-				"requestedMinSoc": {
+				"requestedMinTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
@@ -467,16 +470,16 @@
 				}
 			},
 			"required": [
-				"requestedMinSoc",
+				"requestedMinTargetSoc",
 				"predictedTime"
 			],
 			"additionalProperties": false
 		},
-		"ChargingPredictionDataFinalSoc": {
+		"ChargingPredictionDataMaxTargetSoc": {
 			"description": "This type represents information regarding a charging process time forecast given a fix maximum state of charge.",
 			"type": "object",
 			"properties": {
-				"predictedFinalSoc": {
+				"requestedMaxTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
@@ -491,7 +494,7 @@
 				}
 			},
 			"required": [
-				"predictedFinalSoc",
+				"requestedMaxTargetSoc",
 				"predictedTime"
 			],
 			"additionalProperties": false
@@ -507,7 +510,7 @@
 					"description": "State-of-charge in [%] that was predicted by the LMS at the requestedTimeForDeparture provided by the presystem.",
 					"additionalProperties": false
 				},
-				"predictedTime": {
+				"requestedTimeForDeparture": {
 					"type": "string",
 					"description": "The requestedTimeForDeparture provided by the presystem.",
 					"format": "date-time",
@@ -516,7 +519,7 @@
 			},
 			"required": [
 				"predictedDepartureTimeSoc",
-				"predictedTime"
+				"requestedTimeForDeparture"
 			]
 		},
 		"ChargingProgressPredictionList": {

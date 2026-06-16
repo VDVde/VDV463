@@ -1,5 +1,5 @@
 {
-   "$schema": "http://json-schema.org/draft-04/schema#",
+   "$schema": "http://json-schema.org/draft-07/schema#",
    "$id": "urn:VDV463:2:0:0:ErrorResponse",
    "comment": "VDV463 2.0.0 FINAL",
    "title": "ErrorResponse",

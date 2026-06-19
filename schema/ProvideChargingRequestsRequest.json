@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "urn:VDV463:1:0:0:ProvideChargingRequestsRequest",
 	"comment": "VDV463 1.0.0 FINAL",
 	"title": "ProvideChargingRequestsRequest",
@@ -10,8 +10,7 @@
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/ChargingRequest"
-			},
-			"additionalProperties": false
+			}
 		}
 	},
 	"required": [
@@ -21,51 +20,43 @@
 	"definitions": {
 		"VehicleIdentifier": {
 			"description": "This type represents an unique vehicle identifier associated with VDV261.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"UniqueIdentifier": {
 			"description": "This type represents an unique identifier.",
-			"type": "string",
-			"additionalProperties": false
+			"type": "string"
 		},
 		"ChargingRequestData": {
 			"type": "object",
 			"properties": {
 				"expectedArrivalTimeAtChargingPoint": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"expectedSocAtArrival": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-                    "description": "Expected state-of-charge in [%] on arrival.",
-					"additionalProperties": false
+                    "description": "Expected state-of-charge in [%] on arrival."
 				},
 				"minTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-                    "description": "Minimal state-of-charge in [%] in relation of current maximum capacity and state-of-health",
-					"additionalProperties": false
+                    "description": "Minimal state-of-charge in [%] in relation of current maximum capacity and state-of-health"
 				},
 				"maxTargetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-                    "description": "Maximal state-of-charge in [%] in relation of current maximum capacity and state-of-health",
-					"additionalProperties": false
+                    "description": "Maximal state-of-charge in [%] in relation of current maximum capacity and state-of-health"
 				},
 				"requestedTimeForDeparture": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"adHocCharging": {
-					"type": "boolean",
-					"additionalProperties": false
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -76,7 +67,6 @@
 		},
 		"PreconditioningRequest": {
 			"type": "string",
-			"additionalProperties": false,
 			"enum": [
 				"WarmWaterAndVentilation",
 				"HotWaterAndHeating",
@@ -95,25 +85,21 @@
 				},
 				"ambientTemperature": {
 					"type": "number",
-                    "description": "Ambient temperature in [°C]",
-					"additionalProperties": false
+                    "description": "Ambient temperature in [°C]"
 				},
 				"requestedStartTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"requestedFinishTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"targetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-                    "description": "Target state of charge of the traction battery in [%] ",
-					"additionalProperties": false
+                    "description": "Target state of charge of the traction battery in [%] "
 				}
 			},
 			"required": [
@@ -127,30 +113,25 @@
 			"properties": {
 				"hvacPreconditioningStartTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"hvacAuxiliaryConsumerPower": {
 					"type": "integer",
-                    "description": "Power setpoint for climatic preconditioning in [kW]",
-					"additionalProperties": false
+                    "description": "Power setpoint for climatic preconditioning in [kW]"
 				},
 				"systemPreconditioningStartTime": {
 					"type": "string",
-					"format": "date-time",
-					"additionalProperties": false
+					"format": "date-time"
 				},
 				"systemAuxiliaryConsumerPower": {
 					"type": "integer",
-                    "description": "Power setpoint for system preconditioning in [kW]",
-					"additionalProperties": false
+                    "description": "Power setpoint for system preconditioning in [kW]"
 				},
 				"targetSoc": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 100,
-                    "description": "Target state of charge of the traction battery in [%] ",
-					"additionalProperties": false
+                    "description": "Target state of charge of the traction battery in [%] "
 				}
 			},
 			"required": [
@@ -176,8 +157,7 @@
 					"$ref": "#/definitions/UniqueIdentifier"
 				},
 				"priority": {
-					"type": "integer",
-					"additionalProperties": false
+					"type": "integer"
 				},
 				"chargingRequestData": {
 					"$ref": "#/definitions/ChargingRequestData"

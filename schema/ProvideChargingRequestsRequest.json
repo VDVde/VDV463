@@ -1,7 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "urn:VDV463:1:0:0:ProvideChargingRequestsRequest",
-	"comment": "VDV463 1.0.0 FINAL",
+	"$id": "urn:VDV463:2:0:0:ProvideChargingRequestsRequest",
 	"title": "ProvideChargingRequestsRequest",
 	"description": "This type represents the data associated with charging requests sent by a presystem to a load management system.",
 	"type": "object",

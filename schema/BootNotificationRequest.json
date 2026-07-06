@@ -1,7 +1,6 @@
 {
    "$schema": "http://json-schema.org/draft-07/schema#",
-   "$id": "urn:VDV463:1:0:0:BootNotificationRequest",
-   "comment": "VDV463 1.0.0 FINAL",
+   "$id": "urn:VDV463:2:0:0:BootNotificationRequest",
    "title": "BootNotificationRequest",
    "description": "This type represents the data sent by the presystem to the load management system as a result associated with a successful boot of the presystem.",
    "additionalProperties": false,

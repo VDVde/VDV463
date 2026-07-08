@@ -1,7 +1,6 @@
 {
    "$schema": "http://json-schema.org/draft-07/schema#",
-   "$id": "urn:VDV463:1:0:0:MessageStructure",
-   "comment": "VDV463 1.0.0 FINAL",
+   "$id": "urn:VDV463:2:0:0:MessageStructure",
    "title": "MessageStructure",
    "type": "array",
    "description": "This type represents a generic message structure associated with the VDV463.",
